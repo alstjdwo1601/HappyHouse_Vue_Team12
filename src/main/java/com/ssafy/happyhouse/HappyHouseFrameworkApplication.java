@@ -9,4 +9,5 @@ public class HappyHouseFrameworkApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HappyHouseFrameworkApplication.class, args);
 	}
+	
 }
