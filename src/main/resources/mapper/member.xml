@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.HappyHouseUserMapper">
+	
+	<resultMap type="memberDto" id="memberInfo">
+		<result column="id" property="id"/>
+		<result column="password" property="password"/>
+		<result column="name" property="name"/>
+		<result column="address" property="address"/>
+		<result column="phone" property="phone"/>
+		<collection property="houseInfos" column="id=id" javaType="list" ofType="houseInfoDto" select="userHouseInfoList"/>
+	</resultMap>
+	
+	<select id="login" resultMap="memberInfo" parameterType="hashmap">
+		select * from member where id = #{id} and password = #{password}
+	</select>
+	
+	<select id="signup" parameterType="memberDto">
+		insert into member (id, password, name, address, phone) values(#{id}, #{password}, #{name}, #{address}, #{phone})
+	</select>
+	
+	<insert id="insertUserHouseInfo" parameterType="map">
+		insert into userhouseinfo values(null, #{id}, #{aptCode})
+	</insert>
+	
+	<select id="updateProfile" parameterType="memberDto">
+		update member set password = #{password}, name = #{name}, address = #{address}, phone = #{phone} where id = #{id}
+	</select>
+	
+	<select id="getProfile" parameterType="string" resultMap="memberInfo">
+		select * from member where id = #{id}
+	</select>
+	
+	<select id="removeProfile" parameterType="string">
+  		delete from member where id = #{id}
+  	</select>
+  	
+  	<delete id="removeHouseInfo" parameterType="map">
+  		delete from userhouseinfo where id = #{id} and aptCode=#{aptCode}
+  	</delete>
+	
+	<select id="userHouseInfoList" resultType="houseInfoDto">
+		select h.aptCode, h.aptName, h.buildyear, h.dongCode, h.dongName, h.jibun, h.lat, h.lng, si.sidoname, gu.gugunname,
+				(select dealAmount from housedeal where aptCode = h.aptCode and no = (select max(no) from housedeal where aptCode = h.aptCode)) recentPrice
+		from userhouseinfo uh, houseinfo h
+		left join sidocode si
+		on left(h.dongcode,2) = left(si.sidocode,2)
+		left join guguncode gu
+		on left(h.dongcode,5) = left(gu.guguncode,5)
+		where uh.id = #{id} and h.aptCode = uh.aptCode
+		order by aptName
+	</select>
+
+
+</mapper>
