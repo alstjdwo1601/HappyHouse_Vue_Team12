@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper file: 실행 할 쿼리 문을 저장하는 파일. 테이블 하나당 한개씩 작성
+namespace: 작업하는 테이블들을 구분해주기 위한 식별자 -->
+<mapper namespace="com.ssafy.happyhouse.model.mapper.HappyHouseQnaMapper">
+
+  <select id="selectAll" resultType="QnaDto">
+    select * from qna_board
+  </select>
+
+  <select id="selectOne" parameterType="java.lang.String" resultType="QnaDto">
+    select * from qna_board where num = #{num}
+  </select>
+  
+  <insert id="insert" parameterType="QnaDto">
+  	insert into qna_board values(null, #{id}, #{pw}, #{title}, #{content}, curdate())
+  </insert>
+  
+  <update id="update" parameterType="QnaDto">
+	update qna_board set title = #{title}, content =#{content} where num = #{num}
+  </update>
+	
+  <delete id="delete" parameterType="string">
+	delete from qna_board where num = #{num}
+  </delete>
+  
+  <select id="findByTitle" parameterType="string" resultType="QnaDto">
+	select * from qna_board where title = #{title}
+  </select>
+</mapper>

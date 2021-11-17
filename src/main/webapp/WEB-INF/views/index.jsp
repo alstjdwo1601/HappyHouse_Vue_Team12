@@ -42,7 +42,7 @@
 		
 	</script>
 	</head>
-<body>
+	<body>
 		<div class="container">
 			<div class="jumbotron text-center mb-1">
 			<h4>행복한 우리 집</h4>
@@ -52,6 +52,9 @@
 			<ul class="navbar-nav">
 				<li class="nav-item">
 					<a class="nav-link" href="/">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/qna.html">QnA</a>
 				</li>
 				<c:if test="${empty member}">
 					<li class="nav-item">
