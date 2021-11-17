@@ -29,4 +29,8 @@ namespace: 작업하는 테이블들을 구분해주기 위한 식별자 -->
   <select id="findByTitle" parameterType="string" resultType="QnaDto">
 	select * from qna_board where title like concat('%', #{title}, '%')
   </select>
+  
+  <select id="findById" parameterType="string" resultType="QnaDto">
+	select * from qna_board where id like concat('%', #{id}, '%')
+  </select>
 </mapper>

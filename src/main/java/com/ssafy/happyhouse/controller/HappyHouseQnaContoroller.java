@@ -59,4 +59,9 @@ public class HappyHouseQnaContoroller {
 	public List<QnaDto> findByTitle(@PathVariable String title){
 		return service.findByTitle(title);
 	}
+	
+	@GetMapping(value="/qna/find/{id}")
+	public List<QnaDto> findById(@PathVariable String id){
+		return service.findById(id);
+	}
 }

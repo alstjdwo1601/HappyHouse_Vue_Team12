@@ -44,4 +44,9 @@ public class HappyHouseQnaServiceImpl implements HappyHouseQnaService {
 		return mapper.findByTitle(title);
 	}
 
+	@Override
+	public List<QnaDto> findById(String id) {
+		return mapper.findById(id);
+	}
+
 }

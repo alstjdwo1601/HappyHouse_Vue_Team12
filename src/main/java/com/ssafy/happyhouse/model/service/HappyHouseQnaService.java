@@ -11,4 +11,5 @@ public interface HappyHouseQnaService {
 	public int update(QnaDto c);
 	
 	public List<QnaDto> findByTitle(String title);
+	public List<QnaDto> findById(String id);
 }
