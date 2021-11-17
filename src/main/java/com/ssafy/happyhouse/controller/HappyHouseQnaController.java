@@ -55,12 +55,12 @@ public class HappyHouseQnaController {
 
 
 	
-	@GetMapping(value="/qna/find/{title}")
+	@GetMapping(value="/qna/title/{title}")
 	public List<QnaDto> findByTitle(@PathVariable String title){
 		return service.findByTitle(title);
 	}
 	
-	@GetMapping(value="/qna/find/{id}")
+	@GetMapping(value="/qna/name/{id}")
 	public List<QnaDto> findById(@PathVariable String id){
 		return service.findById(id);
 	}
