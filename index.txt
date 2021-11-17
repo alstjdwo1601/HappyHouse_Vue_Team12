@@ -1,27 +1,25 @@
-HappyHouse_Framwork_Team03
-팀원 : 이호성, 정지민
+HappyHouse_Vue_Team12
 
-<!-- 동별 검색 처리, 아파트별 검색 처리 -->
-1. 메인화면 (완성)
-2. 실거래가 검색, 결과 (완성)
-1-1. index.jsp
-1-2. HappyHouseMapController.java
-1-3. HouseInfoDto.java
-1-4. HappyHouseMapService.java
-1-5. HappyHouseMapServiceImpl.java
-1-6. HouseMapMapper.java
-1-7. SidoGugunCodeDto.java
-1-8. apt.xml
+팀원 : 이호성, 민성재
 
-<!-- 회원정보, 등록, 수정, 조회, 탈퇴 -->
-3. 회원관리 (완성)
-3-1. profile,jsp, profileModify.jsp, removeProfile.jsp, signup.jsp
-3-2. HappyHouseUserController.java
-3-3. HappyHouseUserMapper.java
-3-4. MemberDto.java
-3-5. HappyHouseUserService.java
-3-6. HappyHouseUserServiceImpl.java
-3-7. member.xml
+<!-- FrontEnd -->
+1. Vue로 QnA 페이지 완성
+	1-1. QnA 목록 화면 
+	1-2. QnA 상세 화면 
+	1-3. QnA 등록 화면 
+	1-4. QnA 수정 화면
+	1-5. QnA 검색 화면
+	1-6. QnA 삭제 화면 
 
-4. 로그인/로그아웃 (완성)
-4-1. login.jsp
+
+
+<!-- BackEnd -->
+3. Database - qna_board 설계
+
+4. vo, service, controller, mapper 완성
+	4-1. QnaDto.java
+	4-2. HappyHouseQnaService.java
+	4-3. HappyHouseQnaServiceImple.java
+	4-4. HappyHouseQnaMapper.java
+	4-5. HappyHouseController.java
+	4-6. resources/mapper/qna.xml

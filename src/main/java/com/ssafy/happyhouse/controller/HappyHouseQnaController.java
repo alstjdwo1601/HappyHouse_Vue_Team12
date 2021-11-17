@@ -19,7 +19,7 @@ import com.ssafy.happyhouse.model.service.HappyHouseQnaService;
 
 @CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RestController
-public class HappyHouseQnaContoroller {
+public class HappyHouseQnaController {
 
 	@Autowired
 	HappyHouseQnaService service;
