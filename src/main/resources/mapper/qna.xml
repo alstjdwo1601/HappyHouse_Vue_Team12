@@ -27,6 +27,6 @@ namespace: 작업하는 테이블들을 구분해주기 위한 식별자 -->
   </delete>
   
   <select id="findByTitle" parameterType="string" resultType="QnaDto">
-	select * from qna_board where title = #{title}
+	select * from qna_board where title like concat('%', #{title}, '%')
   </select>
 </mapper>
