@@ -22,6 +22,14 @@ public class HappyHouseUserServiceImpl implements HappyHouseUserService {
 	public MemberDto login(Map<String, String> map) {
 		return mapper.login(map);
 	}
+	
+	
+	//token login
+	@Override
+	public MemberDto loginToken(MemberDto memberDto) throws Exception {
+		return mapper.loginToken(memberDto);
+	}
+	
 
 	@Override
 	public MemberDto getProfile(String id) {
@@ -55,5 +63,7 @@ public class HappyHouseUserServiceImpl implements HappyHouseUserService {
 		mapper.insertUserHouseInfo(map);
 		
 	}
+
+	
 
 }

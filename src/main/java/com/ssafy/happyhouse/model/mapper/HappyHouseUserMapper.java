@@ -1,5 +1,6 @@
 package com.ssafy.happyhouse.model.mapper;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -15,4 +16,7 @@ public interface HappyHouseUserMapper {
 	public void removeProfile(String id);
 	public void removeHouseInfo(Map<String, String> map);
 	public void insertUserHouseInfo(Map<String, String> map);
+	
+	//token login
+	public MemberDto loginToken(MemberDto memberDto) throws SQLException;
 }

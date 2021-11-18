@@ -54,4 +54,10 @@
 	</select>
 
 
+	<!-- token login -->
+	<select id="loginToken" parameterType="memberDto" resultType="memberDto">
+		select *
+		from ssafy_member
+		where id = #{id} and password = #{password}
+	</select>
 </mapper>

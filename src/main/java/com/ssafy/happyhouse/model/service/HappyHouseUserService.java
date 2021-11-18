@@ -13,4 +13,7 @@ public interface HappyHouseUserService {
 	public void removeProfile(String id);
 	public void removeHouseInfo(Map<String, String> map);
 	public void insertUserHouseInfo(Map<String, String> map);
+	
+	//token login
+	public MemberDto loginToken(MemberDto memberDto) throws Exception;
 }
